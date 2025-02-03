@@ -1,5 +1,5 @@
-<h5>Projeto de Automação de Testes com Cypress - E-commerce 🛒🚀</h5>
-<h4>Este é um projeto de automação de testes end-to-end (E2E) desenvolvido com Cypress, testando as principais funcionalidades de um e-commerce simulado.</h4>
+<h2>Projeto de Automação de Testes com Cypress - E-commerce 🛒🚀</h2>
+<h3>Este é um projeto de automação de testes end-to-end (E2E) desenvolvido com Cypress, testando as principais funcionalidades de um e-commerce simulado.</h3>
 
 <ul>
   <h3>📌 Funcionalidades Testadas</h3>
