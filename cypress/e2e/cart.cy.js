@@ -1,3 +1,4 @@
+import { el } from "../fixtures/elements";
 describe('Usuário logado na página de dashboard', () => {
     beforeEach(function () {
 
@@ -21,17 +22,17 @@ describe('Usuário logado na página de dashboard', () => {
 
             // Valida se o item aparece no carrinho
             cy.get('.cart_item').should('be.visible');
-            cy.get('.inventory_item_name').should('contain', 'Sauce Labs Backpack');
-            cy.get('.inventory_item_desc').should('contain', 'carry.allTheThings()');
-            cy.get('.inventory_item_price').should('contain', '$29.99');
+            cy.get(el.title).should('contain', 'Sauce Labs Backpack');
+            cy.get(el.description).should('contain', 'carry.allTheThings()');
+            cy.get(el.price).should('contain', '$29.99');
         });
 
         it('Adiciona um item ao carrinho usando fixture', function () {
             cy.get(this.products.backpack.selector).click();
             cy.get('.shopping_cart_badge').should('contain', '1');
             cy.get('.shopping_cart_link').click();
-            cy.get('.inventory_item_name').should('contain', this.products.backpack.name);
-            cy.get('.inventory_item_price').should('contain', this.products.backpack.price);
+            cy.get(el.title).should('contain', this.products.backpack.name);
+            cy.get(el.price).should('contain', this.products.backpack.price);
         });
 
         it('Remove um item do carrinho e valida carrinho vázio', () => {
