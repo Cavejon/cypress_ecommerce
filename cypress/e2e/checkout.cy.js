@@ -14,13 +14,14 @@ describe('Usuário logado na página de dashboard', function () {
                 cy.get('.shopping_cart_badge').should('contain', '1');
                 cy.get('.shopping_cart_link').click();
 
-                // Clique do botão e avanço
                 cy.get(el.btn_checkout).click();
                 cy.location('pathname').should('eq', '/checkout-step-one.html');
 
                 // Clique com campos vazios e valida erro
                 cy.get(el.btn_continue).click();
                 cy.get('.error-message-container').should('be.visible').and('contain', 'Error: First Name is required');
+                //Ou pode se usar, exemplo abaixo:
+                cy.contains('Error: First Name is required').should('be.visible');
 
                 // Preenche primeiro nome e tenta continuar
                 cy.get('[data-test="firstName"]').type("Pedro Lucas");
